@@ -1,9 +1,8 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import org.json.*;
+
+import java.io.*;
 import java.net.SocketException;
-import java.io.IOException;
+import java.time.LocalDateTime;
 
 public class NeuroSocket implements Runnable {
 
@@ -12,6 +11,10 @@ public class NeuroSocket implements Runnable {
     java.net.Socket echoSocket;
     OutputStream outStream;
     boolean connected = false;
+    boolean working;
+    boolean buttonHeld;
+    boolean started;
+    OnEEGDataListener eegListener;
 
     @Override
     public void run() {
@@ -19,11 +22,48 @@ public class NeuroSocket implements Runnable {
         if (connected) {
             try {
                 String userInput;
+                FileWriter fout = new FileWriter("fromJSON.csv", true);
+                fout.write("ButtonHeld,Current Time,delta,theta,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,highGamma\n");
                 while ((userInput = in.readLine()) != null) {
+                    // invoke callback
+                    eegListener.onEEGData();
+
                     String[] packets = userInput.split("/\r/");
                     for (int i = 0; i < packets.length; i++) {
-//                    JSONObject obj = new JSONObject((String) packets[i]);
                         System.out.println((String) packets[i]);
+                    }
+                    JSONObject eegPower;
+                    try {
+                        if(userInput.contains("eegPower")) {
+                            eegPower = new JSONObject(userInput);
+                            eegPower = eegPower.getJSONObject("eegPower");
+
+                            int delta = eegPower.getInt("delta");
+                            int theta = eegPower.getInt("theta");
+                            int lowAlpha = eegPower.getInt("lowAlpha");
+                            int highAlpha = eegPower.getInt("highAlpha");
+                            int lowBeta = eegPower.getInt("lowBeta");
+                            int highBeta = eegPower.getInt("highBeta");
+                            int lowGamma = eegPower.getInt("lowGamma");
+                            int highGamma = eegPower.getInt("highGamma");
+
+                            System.out.println(this.buttonHeld);
+
+                            JSONObject attnMeditLevel = new JSONObject(userInput);
+                            attnMeditLevel = attnMeditLevel.getJSONObject("eSense");
+                            if (attnMeditLevel.getInt("attention") != 0 && attnMeditLevel.getInt("meditation") != 0) {
+                                working = true;
+                                if (started) {
+                                    fout.write(getButtonHeld() + "," + LocalDateTime.now() + "," + delta + "," + theta + "," + lowAlpha + "," + highAlpha + "," + lowBeta + "," + highBeta +
+                                            "," + lowGamma + "," + highGamma + "\n");
+                                    fout.flush();
+                                }
+                            } else {
+                                working = false;
+                            }
+                        }
+                    } catch(JSONException e) {
+                        e.printStackTrace();
                     }
                 }
             } catch (SocketException e) {
@@ -31,8 +71,23 @@ public class NeuroSocket implements Runnable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
+    }
+
+    public void setButtonHeld(boolean held) {
+        this.buttonHeld = held;
+    }
+
+    public void setStarted(boolean started) {
+        this.started = started;
+    }
+
+    public boolean getButtonHeld() {
+        return this.buttonHeld;
+    }
+
+    public boolean getStarted() {
+        return this.started;
     }
 
     public void sendMessage(String s) {
@@ -50,9 +105,14 @@ public class NeuroSocket implements Runnable {
                     new BufferedReader(
                             new InputStreamReader(echoSocket.getInputStream()));
             connected = true;
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void registerOnEEGListener(OnEEGDataListener eegListener) {
+        this.eegListener = eegListener;
     }
 }
 
