@@ -1,13 +1,9 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 public class ButtonPresser extends JPanel {
 
-    String status;
-    JLabel statusLabel;
     NeuroSocket socket;
 
     public static JLabel upArrow;

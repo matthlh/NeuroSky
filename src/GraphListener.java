@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 public class GraphListener implements ActionListener{
 
     private NeuroSocket socket;
+    UserInterface ui;
     XYChart chart;
     JPanel chartPanel;
 
@@ -21,19 +22,19 @@ public class GraphListener implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        chart = new XYChartBuilder().width(600).height(400).title("Area Chart").xAxisTitle("Time (s)").yAxisTitle("Band Power").build();
+        chart = new XYChartBuilder().width(600).height(350).title("Area Chart").xAxisTitle("Time (s)").yAxisTitle("Band Power").build();
 
         chart.getStyler().setLegendPosition(Styler.LegendPosition.InsideNE);
         chart.getStyler().setDefaultSeriesRenderStyle(XYSeries.XYSeriesRenderStyle.Area);
 
         XYSeries deltaSeries = chart.addSeries("Delta", socket.deltaArray);
-        XYSeries thetaSeries = chart.addSeries("Theta",socket.thetaArray);
-        XYSeries lowAlphaSeries = chart.addSeries("Low Alpha",socket.lowAlphaArray);
-        XYSeries highAlphaSeries = chart.addSeries("High Alpha",socket.highAlphaArray);
-        XYSeries lowBetaSeries = chart.addSeries("Low Beta",socket.lowBetaArray);
-        XYSeries highBetaSeries = chart.addSeries("High Beta",socket.highBetaArray);
-        XYSeries lowGammaSeries = chart.addSeries("Low Gamma",socket.lowGammaArray);
-        XYSeries highGammaSeries = chart.addSeries("High Gamma",socket.highGammaArray);
+        XYSeries thetaSeries = chart.addSeries("Theta", socket.thetaArray);
+        XYSeries lowAlphaSeries = chart.addSeries("Low Alpha", socket.lowAlphaArray);
+        XYSeries highAlphaSeries = chart.addSeries("High Alpha", socket.highAlphaArray);
+        XYSeries lowBetaSeries = chart.addSeries("Low Beta", socket.lowBetaArray);
+        XYSeries highBetaSeries = chart.addSeries("High Beta", socket.highBetaArray);
+        XYSeries lowGammaSeries = chart.addSeries("Low Gamma", socket.lowGammaArray);
+        XYSeries highGammaSeries = chart.addSeries("High Gamma", socket.highGammaArray);
 
         deltaSeries.setEnabled(true);
         thetaSeries.setEnabled(true);
@@ -82,7 +83,7 @@ public class GraphListener implements ActionListener{
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         System.out.println(delta.isSelected());
-                        if(delta.isSelected()) {
+                        if (delta.isSelected()) {
                             deltaSeries.setEnabled(true);
                         } else {
                             deltaSeries.setEnabled(false);
@@ -94,7 +95,7 @@ public class GraphListener implements ActionListener{
                 theta.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        if(theta.isSelected()) {
+                        if (theta.isSelected()) {
                             thetaSeries.setEnabled(true);
                         } else {
                             thetaSeries.setEnabled(false);
@@ -106,7 +107,7 @@ public class GraphListener implements ActionListener{
                 lowAlpha.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        if(lowAlpha.isSelected()) {
+                        if (lowAlpha.isSelected()) {
                             lowAlphaSeries.setEnabled(true);
                         } else {
                             lowAlphaSeries.setEnabled(false);
@@ -118,7 +119,7 @@ public class GraphListener implements ActionListener{
                 highAlpha.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        if(highAlpha.isSelected()) {
+                        if (highAlpha.isSelected()) {
                             highAlphaSeries.setEnabled(true);
                         } else {
                             highAlphaSeries.setEnabled(false);
@@ -130,7 +131,7 @@ public class GraphListener implements ActionListener{
                 lowBeta.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        if(lowBeta.isSelected()) {
+                        if (lowBeta.isSelected()) {
                             lowBetaSeries.setEnabled(true);
                         } else {
                             lowBetaSeries.setEnabled(false);
@@ -142,7 +143,7 @@ public class GraphListener implements ActionListener{
                 highBeta.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        if(highBeta.isSelected()) {
+                        if (highBeta.isSelected()) {
                             highBetaSeries.setEnabled(true);
                         } else {
                             highBetaSeries.setEnabled(false);
@@ -154,7 +155,7 @@ public class GraphListener implements ActionListener{
                 lowGamma.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        if(lowGamma.isSelected()) {
+                        if (lowGamma.isSelected()) {
                             lowGammaSeries.setEnabled(true);
                         } else {
                             lowGammaSeries.setEnabled(false);
@@ -166,7 +167,7 @@ public class GraphListener implements ActionListener{
                 highGamma.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        if(highGamma.isSelected()) {
+                        if (highGamma.isSelected()) {
                             highGammaSeries.setEnabled(true);
                         } else {
                             highGammaSeries.setEnabled(false);
@@ -192,5 +193,6 @@ public class GraphListener implements ActionListener{
                 frame.setVisible(true);
             }
         });
+        ui.myContainer.requestFocusInWindow();
     }
 }

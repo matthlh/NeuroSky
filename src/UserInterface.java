@@ -10,7 +10,6 @@ import java.util.Timer;
 import java.util.Random;
 
 public class UserInterface implements Runnable, OnEEGDataListener, KeyListener {
-    // the frame (titles + borders) of your application
     private JFrame frame;
     static NeuroSocket socket = new NeuroSocket();
 
@@ -38,7 +37,7 @@ public class UserInterface implements Runnable, OnEEGDataListener, KeyListener {
                     public void run() {
                         if (socket.started) {
                             if(controlPane.getStatus().equalsIgnoreCase("Waiting for EEG Data...")) {
-                                System.out.println("Connection is broken");
+                                System.out.println("Headset has disconnected");
                             }
                             randNum = rand.nextInt(4);
 
@@ -72,7 +71,7 @@ public class UserInterface implements Runnable, OnEEGDataListener, KeyListener {
                         }
                     }
                 },
-                2000,
+                controlPane.timeoutSec * 1000,
                 2000);
 
 
@@ -110,6 +109,7 @@ public class UserInterface implements Runnable, OnEEGDataListener, KeyListener {
     }
 
     public static void doConnect() {
+        //Opens new socket through client and server
         t = new Thread(socket);
         socket.init("127.0.0.1", 13854 );
         t.start();
@@ -117,6 +117,7 @@ public class UserInterface implements Runnable, OnEEGDataListener, KeyListener {
     }
 
     public static void doDisconnect() {
+        //disconnects socket
         socket.disconnect();
         try {
             t.join();
@@ -126,17 +127,21 @@ public class UserInterface implements Runnable, OnEEGDataListener, KeyListener {
 
         controlPane.connect.setText("Connect");
         controlPane.start.setEnabled(false);
-        controlPane.setStatus("Idle");
+        controlPane.setStatus("Not Ready");
+        socket.setStarted(false);
     }
 
     @Override
     public void onEEGData() {
+        //updates graph whenever ran
         if(socket.connected) {
             if(socket.working) {
                 if (socket.started) {
                   controlPane.setStatus("Data collection in progress...");
                     controlPane.connect.setText("Disconnect");
                     controlPane.connect.setEnabled(false);
+                    controlPane.start.setEnabled(true);
+                    controlPane.graph.setEnabled(true);
                     if (listener != null && listener.chart != null) {
                         listener.chart.updateXYSeries("Delta", null, socket.deltaArray, null);
                         listener.chart.updateXYSeries("Theta", null, socket.thetaArray, null);
@@ -158,7 +163,11 @@ public class UserInterface implements Runnable, OnEEGDataListener, KeyListener {
             } else {
                 controlPane.setStatus("Waiting for EEG Data...");
                 controlPane.start.setEnabled(false);
+                if(controlPane.start.getText().equalsIgnoreCase("stop")) {
+                    controlPane.start.setEnabled(true);
+                }
                 controlPane.connect.setText("Disconnect");
+                controlPane.connect.setEnabled(true);
             }
         } else {
             controlPane.setStatus("Failed to connect");
@@ -176,8 +185,8 @@ public class UserInterface implements Runnable, OnEEGDataListener, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
+        //Checks if correct button was clicked
         System.out.println(e.getKeyCode());
-//        socket.setButtonHeld(true);
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             if(UserInterface.randNum == 0) {
                 socket.setResult(1);
@@ -210,18 +219,15 @@ public class UserInterface implements Runnable, OnEEGDataListener, KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-//        socket.setButtonHeld(false);
     }
 
     private void createComponents(Container container) {
+        //Adds components in the Jpanel(myContainer)
         container.add(myContainer);
     }
 
-    public JFrame getFrame() {
-        return this.frame;
-    }
-
     public void logData() {
+        //logs the data
         try {
             if (fout != null && socket != null && socket.getWriteQueue() != null) {
                 fout.write(socket.getWriteQueue());

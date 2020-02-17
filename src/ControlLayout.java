@@ -5,7 +5,8 @@ import java.awt.*;
 
 public class ControlLayout extends JPanel implements ChangeListener {
 
-    String status = "Idle";
+    int timeoutSec;
+    String status = "Not Ready";
     JLabel statusLabel;
     NeuroSocket socket;
     JPanel control;
@@ -13,6 +14,7 @@ public class ControlLayout extends JPanel implements ChangeListener {
     JPanel parent;
     JButton connect;
     JButton start;
+    JButton graph;
     GraphListener graphListener;
 
     public ControlLayout(JPanel parent, NeuroSocket socket, GraphListener listener) {
@@ -33,8 +35,9 @@ public class ControlLayout extends JPanel implements ChangeListener {
         start.setEnabled(false);
         connect.addActionListener(new ConnectListener(parent, connect, this));
         start.addActionListener(new StartListener(parent, socket, start, this));
-        JButton graph = new JButton("Show Graph");
+        graph = new JButton("Show Graph");
         graph.addActionListener(graphListener);
+        graph.setEnabled(false);
         JLabel timeoutLabel = new JLabel("Timeout");
         JSlider timeoutSlider = new JSlider(JSlider.HORIZONTAL,
                 0,5, 0);
@@ -70,6 +73,8 @@ public class ControlLayout extends JPanel implements ChangeListener {
         JSlider source = (JSlider)e.getSource();
         if (source.getValueIsAdjusting()) {
             System.out.println("is adjusting to: " + ((JSlider) e.getSource()).getValue());
+            timeoutSec = ((JSlider) e.getSource()).getValue();
+            parent.requestFocusInWindow();
         }
     }
 }

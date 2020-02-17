@@ -24,7 +24,7 @@ public class StartListener implements ActionListener{
             button.setEnabled(true);
         } else {
             button.setText("Start");
-            if(controlPane.getStatus().equalsIgnoreCase("Idle") ||
+            if(controlPane.getStatus().equalsIgnoreCase("Not Ready") ||
                     controlPane.getStatus().equalsIgnoreCase("Connecting") ||
                     controlPane.getStatus().equalsIgnoreCase("Waiting for EEG Data...")) {
                 button.setEnabled(false);

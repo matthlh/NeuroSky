@@ -23,7 +23,6 @@ public class ConnectListener implements ActionListener{
         } else if (button.getText().equalsIgnoreCase("Connect")) {
             UserInterface.doConnect();
         }
-
         parent.requestFocusInWindow();
     }
 }
