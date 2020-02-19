@@ -3,31 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0d1e68a0-cca2-4c6f-b342-a0086ac44f63" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/ButtonPresser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/ButtonPresser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/ConnectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/ConnectListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/ControlLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/ControlLayout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/GraphListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/KeyBoardListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/StartListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/StartListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/UserInterface$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/UserInterface$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/UserInterface$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/UserInterface$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NeuroSky/UserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NeuroSky/UserInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ButtonPresser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ButtonPresser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConnectListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnectListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ControlLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlLayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GraphListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KeyBoardListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StartListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StartListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,8 +21,8 @@
     <session id="-865436206">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
-          <entry key="project.open.time.11" value="2" />
+          <entry key="project.closed" value="10" />
+          <entry key="project.open.time.11" value="4" />
           <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.19" value="1" />
@@ -56,7 +31,7 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -113,7 +88,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ButtonPresser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
+            <state relative-caret-position="330">
               <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -122,7 +97,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ControlLayout.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -135,21 +110,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/StartListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GraphListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="195">
               <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -200,14 +163,6 @@
               <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/2019-04-03T19:32:20.csv">
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-          </provider>
-          <provider selected="true" editor-type-id="csv-text-editor" />
         </entry>
       </file>
     </leaf>
@@ -286,11 +241,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="689" />
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="465" />
-    <option name="height" value="611" />
+    <option name="width" value="1440" />
+    <option name="height" value="803" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -298,6 +252,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -319,8 +275,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,14 +354,20 @@
       <option name="project" value="LOCAL" />
       <updated>1552780755140</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Made a simple key-holding game">
+      <created>1581979937234</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581979937234</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="803" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23390558" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23962805" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -506,6 +466,17 @@
     <entry file="file://$PROJECT_DIR$/2019-03-27T19:06:58.csv" />
     <entry file="file://$PROJECT_DIR$/2019-03-28T23:09:25.csv" />
     <entry file="file://$PROJECT_DIR$/src/KeyBoardListener.java" />
+    <entry file="file://$PROJECT_DIR$/2019-04-03T19:32:20.csv" />
+    <entry file="file://$PROJECT_DIR$/src/StartListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/UserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2055">
@@ -516,22 +487,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlLayout.java">
+    <entry file="file://$PROJECT_DIR$/src/ButtonPresser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        <state relative-caret-position="330">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/StartListener.java">
+    <entry file="file://$PROJECT_DIR$/src/GraphListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="195">
+          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -570,35 +543,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/2019-04-03T19:32:20.csv">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ButtonPresser.java">
+    <entry file="file://$PROJECT_DIR$/src/ControlLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+        <state relative-caret-position="240">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GraphListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#531#532#0" expanded="true" />
           </folding>
         </state>
       </provider>
