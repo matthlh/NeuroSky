@@ -19,6 +19,7 @@ public class ButtonPresser extends JPanel {
         drawComponents();
     }
 
+    //Makes the arrow keys blink
     private void drawComponents() {
 
         upArrow = new JLabel();

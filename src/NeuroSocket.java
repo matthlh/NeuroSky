@@ -48,13 +48,9 @@ public class NeuroSocket implements Runnable {
                 String userInput;
 
                 while ((userInput = in.readLine()) != null) {
-                    // invoke callback
+                    //Invoke callback
                     eegListener.onEEGData();
 
-                    String[] packets = userInput.split("/\r/");
-//                    for (int i = 0; i < packets.length; i++) {
-//                        System.out.println((String) packets[i]);
-//                    }
                     JSONObject eegPower;
                     try {
                         if(userInput.contains("eegPower")) {
@@ -62,10 +58,12 @@ public class NeuroSocket implements Runnable {
                             eegPower = eegPower.getJSONObject("eegPower");
 
 
-
+                            //Recieves brain waves from headset
                             JSONObject attnMeditLevel = new JSONObject(userInput);
                             attnMeditLevel = attnMeditLevel.getJSONObject("eSense");
-                            if (attnMeditLevel.getInt("attention") != 0 && attnMeditLevel.getInt("meditation") != 0 && isNotSame(eegPower)) {
+                            if (attnMeditLevel.getInt("attention") != 0 &&
+                                    attnMeditLevel.getInt("meditation") != 0 &&
+                                    isNotSame(eegPower)) {
                                 working = true;
                                 if (started) {
                                     delta = eegPower.getInt("delta");
@@ -149,7 +147,9 @@ public class NeuroSocket implements Runnable {
     }
 
     public String getWriteQueue() {
-        return getResult() + "," + LocalDateTime.now() + "," + delta + "," + theta + "," + lowAlpha + "," + highAlpha + "," + lowBeta + "," + highBeta +
+        return getResult() + "," + LocalDateTime.now() + "," + delta + ","
+                + theta + "," + lowAlpha + "," + highAlpha + ","
+                + lowBeta + "," + highBeta +
                 "," + lowGamma + "," + highGamma + "\n";
     }
 

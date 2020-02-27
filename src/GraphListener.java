@@ -50,12 +50,12 @@ public class GraphListener implements ActionListener{
             @Override
             public void run() {
 
-                // Create and set up the window.
+                //Create and set up the window.
                 JFrame frame = new JFrame("Graph");
                 frame.setLayout(new BorderLayout());
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-                // chart
+                //Chart
                 chartPanel = new XChartPanel<>(chart);
                 frame.add(chartPanel, BorderLayout.CENTER);
 
@@ -188,7 +188,7 @@ public class GraphListener implements ActionListener{
 
                 frame.add(checkBox, BorderLayout.SOUTH);
 
-                // Display the window.
+                //Display the window.
                 frame.pack();
                 frame.setVisible(true);
             }

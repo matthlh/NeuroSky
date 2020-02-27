@@ -180,8 +180,7 @@ public class UserInterface implements Runnable, OnEEGDataListener, KeyListener {
     }
 
     @Override
-    public void keyTyped(KeyEvent e) {
-    }
+    public void keyTyped(KeyEvent e) { }
 
     @Override
     public void keyPressed(KeyEvent e) {
@@ -218,11 +217,10 @@ public class UserInterface implements Runnable, OnEEGDataListener, KeyListener {
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {
-    }
+    public void keyReleased(KeyEvent e) { }
 
     private void createComponents(Container container) {
-        //Adds components in the Jpanel(myContainer)
+        //Adds components in the JPanel(myContainer)
         container.add(myContainer);
     }
 
